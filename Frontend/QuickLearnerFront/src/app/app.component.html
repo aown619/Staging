@@ -1,14 +1,11 @@
 <div id="loginDiv">
     <a href='home'>
-        <img src="../../assets/battlesquids_banner.png" id="banner"/>
-    </a>
+       
+        <h1>QuickLearner</h1>
+          </a>
     <div id="compDiv">
         <br>
         <app-navbar (logInEvent)="setLogin()" (logOutEvent)="setLogout()"></app-navbar>
-        <app-notifications *ngIf="person && !game" (startGameEvent)="startGame($event)" ></app-notifications>
-        <button *ngIf="person && !game" routerLink = 'gamescreen' (click)="createGame()" routerLinkActive="active">Create new Game</button>
-        <br>
-        <button *ngIf="person && !game" routerLink = 'matchhistory' routerLinkActive='active'>View Match History</button>
     </div>
     <router-outlet></router-outlet>
 </div>
