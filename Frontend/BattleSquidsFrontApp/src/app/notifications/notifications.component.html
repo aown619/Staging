@@ -1,0 +1,24 @@
+<h2>Your Invites</h2>
+<ng-container *ngIf="invites && invites !== undefined">
+    <ng-container *ngIf="checkAnswerableInvites()">
+        <table id="inviteTable">
+            <tr class="inviteHeader">
+                <th>From</th>
+                <th>Type</th>
+                <th>Respond</th>
+            </tr>
+            <tr class="inviteRow" *ngFor="let invite of invites; index as i">
+                <ng-container *ngIf="invite.status.id == 1">
+                    <td class="inviteData">{{invite.sender.username}}</td>
+                    <td class="inviteData">{{invite.type.name}}</td>
+                    <td class="inviteData">
+                        <button (click)="acceptInvite(i)">Accept</button>
+                        <br>
+                        <button (click)="declineInvite(i)">Decline</button>
+                    </td>
+                </ng-container>
+            </tr>
+        </table>
+    </ng-container>
+</ng-container>
+<br>

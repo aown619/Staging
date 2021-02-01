@@ -1,0 +1,22 @@
+#inviteTable {
+    width: 30%;
+    border: 1px solid black;
+    padding: 1%;
+    overflow-y: auto;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.inviteHeader {
+    background-color: black;
+    color: white;
+}
+
+.inviteRow {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.inviteData {
+    width: 10%;
+}

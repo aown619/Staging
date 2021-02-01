@@ -1,0 +1,23 @@
+<h2>Your Match History</h2>
+<ng-container *ngIf="history && history !== undefined">
+    <ng-container *ngIf="history.length > 0">
+        <table id="matchHistoryTable">
+            <tr class="mh-header">
+                <th>Game Started</th>
+                <th>Game Ended</th>
+                <th>Winner</th>
+                <th>Loser</th>
+            </tr>
+            <tr *ngFor="let match of history" [className]="getWinOrLose(match.winner.username)">
+                <td class="mh-data">{{formatDate(match.begin)}}</td>
+                <td class="mh-data">{{formatDate(match.end)}}</td>
+                <td [className]="getDataWithUser(match.winner.username)">{{match.winner.username}}</td>
+                <td [className]="getDataWithUser(match.loser.username)">{{match.loser.username}}</td>
+            </tr>
+        </table>
+    </ng-container>
+</ng-container>
+<div id="buttonDiv">
+    <br>
+    <button (click)='returnToPrevious()'>Close Match History</button> 
+</div>

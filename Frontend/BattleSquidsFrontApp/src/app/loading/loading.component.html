@@ -1,0 +1,5 @@
+<div *ngIf="loading">
+    <h2 *ngIf="isSender && opponent"> Challenged {{opponent.username}}! Loading the game...</h2>
+    <h2 *ngIf="!isSender && opponent"> Challenger {{opponent.username}} appears! Loading the game...</h2>
+    <img [src]="isSender? images[0] : images[1]"/>
+</div>
