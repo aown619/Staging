@@ -20,20 +20,5 @@
 		
 		<!-- tell hibernate where to find our mappings -->
 		<mapping class="com.revature.beans.Person"></mapping>
-		<mapping class="com.revature.beans.Tile"></mapping>
-		<mapping class="com.revature.beans.TileStatus"></mapping>
-		<mapping class="com.revature.beans.Board"></mapping>
-		<mapping class="com.revature.beans.MatchHistory"></mapping>
-		<mapping class="com.revature.beans.Squid"></mapping>
-
-		<mapping class="com.revature.beans.Game"></mapping>
-		
-		<mapping class="com.revature.beans.GameStatus"></mapping>
-		
-		
-		<mapping class="com.revature.beans.Chat"></mapping>
-		<mapping class="com.revature.beans.Invite"></mapping>
-		<mapping class="com.revature.beans.InviteType"></mapping>
-		<mapping class="com.revature.beans.InviteStatus"></mapping>
 	</session-factory>
 </hibernate-configuration>

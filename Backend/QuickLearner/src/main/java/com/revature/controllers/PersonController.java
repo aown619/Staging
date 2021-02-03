@@ -1,5 +1,8 @@
 package com.revature.controllers;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,12 +49,14 @@ public class PersonController {
 	
 	@PostMapping
 	public ResponseEntity<Person> registerUser(HttpSession session, @RequestBody Person person) {
+		System.out.println("hello");
 		person = personServ.getPersonById(personServ.addPerson(person));
 		return ResponseEntity.ok(person);
 	}
 	
 	@DeleteMapping
 	public ResponseEntity<Void> logOut(HttpSession session) {
+		System.out.println("Bye person");
 		session.invalidate();
 		return ResponseEntity.ok().build();
 	}
@@ -67,7 +72,8 @@ public class PersonController {
 	}
 	
 	@GetMapping(path="/id/{id}")
-	public ResponseEntity<Person> getUserById(HttpSession session, @PathVariable("id") Integer id) {
+	public ResponseEntity<Person> getUserById( @PathVariable("id") Integer id) {
+		System.out.println("helo person");
 		Person person = personServ.getPersonById(id);
 		if (person != null) {
 			return ResponseEntity.ok(person);
@@ -78,6 +84,16 @@ public class PersonController {
 	@GetMapping(path="/user/{username}")
 	public ResponseEntity<Person> getUserByUsername(HttpSession session, @PathVariable("username") String username) {
 		Person person = personServ.getPersonByUsername(username);
+		if (person != null) {
+			return ResponseEntity.ok(person);
+		}
+		return ResponseEntity.badRequest().build();
+	}
+	
+	@GetMapping
+	public ResponseEntity<Set<Person>> getall() {
+		System.out.println("helo person");
+		Set<Person> person = personServ.getAllPerson();
 		if (person != null) {
 			return ResponseEntity.ok(person);
 		}
