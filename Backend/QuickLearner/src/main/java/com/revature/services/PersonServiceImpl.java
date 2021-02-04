@@ -29,6 +29,7 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override
 	public Person getPersonByUsername(String username) {
+		System.out.println(username);
 		return personDao.getByUsername(username);
 	}
 

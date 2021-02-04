@@ -15,6 +15,7 @@ public class PersonHibernate extends GenericHibernate<Person> implements PersonD
 
 	@Override
 	public Person getByUsername(String username) {
+		System.out.println("usernmae in personhibernate"+ username);
 		Person p = null;
 		try (Session s = hu.getSession()) {
 			s.beginTransaction();

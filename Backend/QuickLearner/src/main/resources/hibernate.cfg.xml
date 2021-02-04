@@ -20,5 +20,6 @@
 		
 		<!-- tell hibernate where to find our mappings -->
 		<mapping class="com.revature.beans.Person"></mapping>
+		<mapping class="com.revature.beans.Type"></mapping>
 	</session-factory>
 </hibernate-configuration>
